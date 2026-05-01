@@ -20,44 +20,25 @@
       html, body { margin: 0; padding: 0; background-color: black; overflow: hidden; font-family: 'Orbitron', sans-serif; color: white; }
       #ui { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
       .crosshair { position: absolute; top: 50%; left: 50%; width: 10px; height: 10px; border: 1px solid rgba(255,0,0,0.5); border-radius: 50%; transform: translate(-50%, -50%); }
-      #overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); display: flex; flex-direction: column; align-items: center; justify-content: center; pointer-events: auto; z-index: 10; text-align: center; padding: 20px;}
-      #overlay h1 { color: #ff0000; font-size: 3.5rem; margin-bottom: 10px; text-shadow: 0 0 15px red; }
-      #overlay h2 { color: #888; font-size: 1rem; margin-bottom: 30px; letter-spacing: 2px; }
-      #overlay p { margin-bottom: 20px; line-height: 1.6; max-width: 700px; font-size: 0.9rem;}
-      .difficulty-container { display: flex; gap: 10px; margin-bottom: 30px; }
-      .diff-btn { background: #333; color: #888; border: 1px solid #444; padding: 10px 20px; cursor: pointer; transition: all 0.3s; }
-      .diff-btn:hover, .diff-btn.active { background: #ff0000; color: white; border-color: #ff0000; }
-      button#start-btn { background: #ff0000; color: white; border: none; padding: 20px 60px; font-size: 1.5rem; cursor: pointer; font-family: 'Orbitron'; box-shadow: 0 0 20px rgba(255,0,0,0.5); }
-      button#start-btn:hover { background: #aa0000; transform: scale(1.05); }
-      #hint-bar { position: absolute; top: 20px; width: 100%; text-align: center; color: #ffff00; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; text-shadow: 0 0 5px black; }
-      #story-box { border-left: 2px solid red; padding-left: 15px; text-align: left; margin-bottom: 30px; font-style: italic; color: #ccc; }
+      #overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: flex; flex-direction: column; align-items: center; justify-content: center; pointer-events: auto; z-index: 10; text-align: center;}
+      #overlay h1 { color: #ff0000; font-size: 3rem; margin-bottom: 20px; }
+      #overlay p { margin-bottom: 30px; line-height: 1.5; max-width: 600px;}
+      button { background: #ff0000; color: white; border: none; padding: 15px 40px; font-size: 1.2rem; cursor: pointer; font-family: 'Orbitron'; }
+      button:hover { background: #aa0000; }
       #game-status { position: absolute; bottom: 20px; left: 20px; font-size: 1rem; color: #ff0000; text-transform: uppercase; }
       #flash-red { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 0, 0, 0.2); display: none; pointer-events: none; z-index: 5; }
     </style>
   </head>
   <body>
     <div id="ui">
-      <div id="hint-bar">OBJECTIVE: LOCATE SECURITY KEYCARD IN LAB WING</div>
       <div class="crosshair"></div>
       <div id="game-status">Sector 7 Lockdown | Stealth Protocol Active</div>
     </div>
     <div id="flash-red"></div>
     <div id="overlay">
       <h1>SECTOR 7</h1>
-      <h2>BIOWEAPON RESEARCH DIVISION</h2>
-      <div id="story-box">
-        Log Entry 402: "The specimens have breached containment. Sector 7 is now a tomb. 
-        The Brute... it watches from the shadows. If you find this, the keycard is in the Lab. 
-        Don't run. It hears the heartbeats. God help us all."
-      </div>
-      <p>Select Protocol Difficulty:</p>
-      <div class="difficulty-container">
-        <button class="diff-btn" data-diff="SANDBOX">SANDBOX</button>
-        <button class="diff-btn" data-diff="EASY">EASY</button>
-        <button class="diff-btn active" data-diff="NORMAL">NORMAL</button>
-        <button class="diff-btn" data-diff="HARD">HARD</button>
-      </div>
-      <p>WASD to move | SHIFT to sprint | CTRL to sneak | E to interact</p>
+      <p>Escape the research facility. Find the BLUE keycard to unlock the lift. Watch your noise level—Sprinting attracts unwanted attention.</p>
+      <p>Controls: WASD to move, SHIFT to sprint, CTRL to sneak. Click to start.</p>
       <button id="start-btn">INITIATE ESCAPE</button>
     </div>
     <script type="module" src="main.js"></script>
